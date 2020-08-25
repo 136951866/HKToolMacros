@@ -10,6 +10,26 @@
 #define HKToolMacros_h
 
 
+#define HKGetNibView(className) [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass([className class]) owner:nil options:nil] lastObject];
+
+//cell
+#define HKRegisterNibCell(T,className) [T registerNib:[UINib nibWithNibName:NSStringFromClass([className class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([className class])]
+#define HKDequeueReusableCellWithIdentifierCell(T,className,indexPath) [T dequeueReusableCellWithIdentifier:NSStringFromClass([className class]) forIndexPath:indexPath]
+
+//collection header
+#define HKRegisterNibUICollectionHeader(T,className) [T  registerNib:[UINib nibWithNibName:NSStringFromClass([className class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([className class])]
+#define HKDequeueReusableSupplementaryHeaderUICollectionHeader(T,className,indexPath) [T dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([className class]) forIndexPath:indexPath]
+
+//collection Footer
+#define HKRegisterNibUICollectionFooter(T,className) [T  registerNib:[UINib nibWithNibName:NSStringFromClass([className class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([className class])]
+#define HKDequeueReusableSupplementaryFooterUICollectionHeader(T,className,indexPath) [T dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([className class]) forIndexPath:indexPath]
+
+
+//tableview section
+#define HKRegisterNibUITableViewHeaderFooterView(T,className) [T registerNib:[UINib nibWithNibName:NSStringFromClass([className class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([className class])];
+
+#define HKDequeueReusableUITableViewHeaderFooterView(T,className) [T dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([className class])]
+
 /** 定义block */
 typedef void (^kHKBasicBlock)(void);
 typedef void (^kHKBOOLBlock)(BOOL);
