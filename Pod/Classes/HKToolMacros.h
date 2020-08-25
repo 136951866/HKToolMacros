@@ -161,4 +161,6 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define kHKWidth(view)     CGRectGetWidth(view.frame)
 #define kHKHeight(view)    CGRectGetHeight(view.frame)
 
+
+#define kHKBaseTag 1000
 #endif /* HKToolMacros_h */
